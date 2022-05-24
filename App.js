@@ -7,6 +7,7 @@ const Stack = createNativeStackNavigator();
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import ForgotScreen from './screens/ForgotScreen';
+import UploadRecepie from './screens/UploadRecepie';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
         <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
         <Stack.Screen options={{headerShown: false}} name="ForgotPassword" component={ForgotScreen} />
+        <Stack.Screen options={{headerShown: false}} name="uploadRecepie" component={UploadRecepie} />
       </Stack.Navigator>
     </NavigationContainer>
   );
