@@ -13,7 +13,6 @@ import { useNavigation } from "@react-navigation/core";
 import { auth } from "../firebase-config";
 import { HeaderTitle } from "../constants/AppStyles";
 
-
 const LoginScreen = () => {
   const [email, setEmail] = useState("a@a.es");
   const [password, setPassword] = useState("12345678");
@@ -56,59 +55,57 @@ const LoginScreen = () => {
   };
 
   const changeScreen = () => {
-    navigation.replace("ForgotPassword")
-  }
+    navigation.replace("ForgotPassword");
+  };
 
-  return (    
+  return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <ImageBackground 
-        source={require('../img/coock.jpeg')}
+      <ImageBackground
+        source={require("../img/coock.jpeg")}
         resizeMode="cover"
         style={styles.image}
-        >
-      <HeaderTitle
-        style={styles.title}
-      >Bienvenido a </HeaderTitle>
-      <Image 
-        source={require('../assets/foodygram.png')} 
-        style={styles.logoImage}
-      />
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Introduce tu correo"
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          style={styles.input}
-          autoCapitalize={"none"}
-          autoComplete="email"
+      >
+        <HeaderTitle style={styles.title}>Bienvenido a </HeaderTitle>
+        <Image
+          source={require("../assets/foodygram.png")}
+          style={styles.logoImage}
         />
-        <TextInput
-          placeholder="Introduce tu contraseña"
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-          style={styles.input}
-          secureTextEntry={true}
-          autoCapitalize={"none"}
-        />
-      </View>
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="Introduce tu correo"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            style={styles.input}
+            autoCapitalize={"none"}
+            autoComplete="email"
+          />
+          <TextInput
+            placeholder="Introduce tu contraseña"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            style={styles.input}
+            secureTextEntry={true}
+            autoCapitalize={"none"}
+          />
+        </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={() => handleSigIn()} style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => handleSignUp()}
-          style={[styles.button, styles.buttonOutline]}
-        >
-          <Text style={styles.buttonText}>Register</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => changeScreen()}
-          style={[styles.button, styles.buttonOutline]}
-        >
-          <Text style={styles.buttonText}>Forgot password?</Text>
-        </TouchableOpacity>
-      </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => handleSigIn()} style={styles.button}>
+            <Text style={styles.buttonText}>Login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => handleSignUp()}
+            style={[styles.button, styles.buttonOutline]}
+          >
+            <Text style={styles.buttonText}>Register</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => changeScreen()}
+            style={[styles.button, styles.buttonOutline]}
+          >
+            <Text style={styles.buttonText}>Forgot password?</Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     </KeyboardAvoidingView>
   );
@@ -163,13 +160,11 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  title:{
+  title: {
     marginLeft: "7%",
-    color: '#ffff',
+    color: "#ffff",
   },
   logoImage: {
-    marginLeft: 60
-  }
-
-
+    marginLeft: 60,
+  },
 });

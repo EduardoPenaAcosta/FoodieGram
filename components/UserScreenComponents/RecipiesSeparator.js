@@ -6,7 +6,10 @@ const RecipiesSeparator = () => {
     <View style={styles.container}>
       <Text style={styles.textSeparator}>Recetas</Text>
       <View style={styles.containerLine}>
-        <Image source={require('../../assets/horizontalLine.png')} style={styles.lineStyle}/>
+        <Image
+          source={require("../../assets/horizontalLine.png")}
+          style={styles.lineStyle}
+        />
       </View>
     </View>
   );
@@ -15,18 +18,18 @@ const RecipiesSeparator = () => {
 export default RecipiesSeparator;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      },
-    lineStyle:{
-        height: 3,
-        width: 400
-   }, 
-   textSeparator: {
-       marginBottom: 10,
-       marginLeft: 130,
-       fontSize:45,
-       fontWeight: 'bold',
-       fontStyle: 'italic',
-   }
+  container: {
+    flex: 1,
+  },
+  lineStyle: {
+    height: 3,
+    width: 400,
+  },
+  textSeparator: {
+    marginBottom: 10,
+    marginLeft: 130,
+    fontSize: 45,
+    fontWeight: "bold",
+    fontStyle: "italic",
+  },
 });

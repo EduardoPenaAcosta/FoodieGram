@@ -7,8 +7,7 @@ import BarraTop from "../components/OptionsScreen/BarraTop";
 import BottomBar from "../components/GeneralComponents/BottomBar";
 
 const OptionsScreen = () => {
-
-const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const handleSignOut = () => {
     auth
@@ -99,7 +98,7 @@ const navigation = useNavigation();
           />
         </View>
       </View>
-      
+
       <View style={styles.bottomBar}>
         <BottomBar />
       </View>

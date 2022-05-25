@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 10,
   },
-  containerImage:{
-      marginLeft: 30,
-      borderRadius: 10,
+  containerImage: {
+    marginLeft: 30,
+    borderRadius: 10,
   },
   boldStyle: {
     fontWeight: "bold",
@@ -56,10 +56,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   textStyle: {
-      fontSize: 16
+    fontSize: 16,
   },
   image: {
-    width: Platform.OS === 'ios' ? 150 : 120,
-    height: Platform.OS === 'ios' ? 150 : 120,
+    width: Platform.OS === "ios" ? 150 : 120,
+    height: Platform.OS === "ios" ? 150 : 120,
   },
 });
