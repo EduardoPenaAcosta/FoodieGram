@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, Platform, TouchableOpacity } from "react-native";
-import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/core";
 
@@ -8,24 +7,20 @@ const BottomBar = () => {
 
   const navigation = useNavigation();
 
-  const hanleGoHome = (app) => {
-
-      navigation.replace(app);
-       
+  const handleGoHome = (app) => {
+      navigation.navigate(app);
   }
-
-
   return (
     <View>
       <View style={styles.container}>
-          <TouchableOpacity style={styles.icon} onPress={() => {hanleGoHome('home')}}>
+          <TouchableOpacity style={styles.icon} onPress={() => {handleGoHome("Home")}}>
             <Ionicons name="home-outline" size={40} color="white" style={styles.separatorButton}/>
           </TouchableOpacity>
-        <TouchableOpacity style={styles.icon} onPress={hanleGoHome('uploadRecepie')} >
+        <TouchableOpacity style={styles.icon} onPress={() => {handleGoHome('UploadRecepie')}} >
           <Ionicons name="fast-food-outline" size={40} color="white" style={styles.separatorButton}/>
         </TouchableOpacity>
         <TouchableOpacity style={styles.icon}>
-          <Ionicons name="person-circle-outline" size={40} color="white"  onPress={hanleGoHome('user')}/>
+          <Ionicons name="person-circle-outline" size={40} color="white"  onPress={() => {handleGoHome('UserProfiles')}}/>
         </TouchableOpacity>
       </View>
     </View>

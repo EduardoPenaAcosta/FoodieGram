@@ -28,12 +28,6 @@ const BarraTop = () => {
                 <Image style={styles.logoBar}
                     source={require("../../assets/foodygram.png")}></Image>
             </View>
-            
-            <View style={styles.botonesTopBar}>
-            <TouchableOpacity onPress={() => handleOptions()}>
-                    <Ionicons name="options-outline" size={24} color="white" />
-                </TouchableOpacity>
-            </View>
         </View>
 
     )
@@ -41,7 +35,7 @@ const BarraTop = () => {
 const styles = StyleSheet.create({
 
     logoBar:{
-        marginLeft: 50 ,
+        marginLeft: 150 ,
         marginTop: 20,
         width: 200,
         height: 30

@@ -15,8 +15,8 @@ import { HeaderTitle } from "../constants/AppStyles";
 
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("a@a.es");
+  const [password, setPassword] = useState("12345678");
 
   const navigation = useNavigation();
 
@@ -80,6 +80,7 @@ const LoginScreen = () => {
           onChangeText={(text) => setEmail(text)}
           style={styles.input}
           autoCapitalize={"none"}
+          autoComplete="email"
         />
         <TextInput
           placeholder="Introduce tu contraseña"
