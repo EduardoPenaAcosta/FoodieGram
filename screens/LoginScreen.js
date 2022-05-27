@@ -14,8 +14,8 @@ import { auth } from "../firebase-config";
 import { HeaderTitle } from "../constants/AppStyles";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("a@a.es");
-  const [password, setPassword] = useState("12345678");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigation = useNavigation();
 

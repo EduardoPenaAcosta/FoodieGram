@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#1B0E5C",
     flexDirection: "row",
-    paddingLeft: 120,
+    paddingLeft: 60,
     paddingRight: 120,
     paddingBottom: Platform.OS === "ios" ? 20 : 0,
     borderRadius: 10,

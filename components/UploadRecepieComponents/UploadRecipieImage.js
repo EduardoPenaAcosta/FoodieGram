@@ -13,8 +13,11 @@ import {
   MediaTypeOptions,
 } from "expo-image-picker";
 
+import CameraRoll from "@react-native-community/cameraroll";
+
 
 const UploadRecipieImage = () => {
+
   const [coverPage, setCoverPage] = useState(null);
   const [textRecipie, setextRecipie] = useState("");
 
@@ -25,10 +28,13 @@ const UploadRecipieImage = () => {
 
     if (!imageResult.cancelled) {
       setCoverPage(imageResult.uri);
+      CameraRoll.save(coverPage ,{type:"photo",album:"../../assets/saveImages"})
+                  .then((res)=>{console.log("save img...",res);})
+                  .catch((err)=>{console.log("err for save img...",err);})
     }
-    console.log(coverPage);
-  };
-
+    
+    
+}
   return (
     <KeyboardAvoidingView style={styles.container}>
       <TouchableOpacity style={styles.opacityInput} onPress={() => pickImageGalery()}>
