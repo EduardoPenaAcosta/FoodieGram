@@ -3,6 +3,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  Text,
+  
 } from "react-native";
 import { EvilIcons } from "@expo/vector-icons";
 

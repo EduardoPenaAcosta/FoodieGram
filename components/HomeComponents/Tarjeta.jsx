@@ -3,29 +3,28 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  Image
 } from "react-native";
 import { EvilIcons } from "@expo/vector-icons";
 
-const Tarjeta = () => {
-  const prueba = () => {
-    console.log("prueba");
-  };
+const Tarjeta = ({data} ) => {
+  let img = Image.resolveAssetSource(data.item.photoPath)
   return (
     <View style={styles.container2}>
       <ImageBackground
-        source={require("../../assets/Hamburguesa-1.jpg")}
+        source={require('../../assets/Hamburguesa-1.jpg')}
         style={styles.image2}
         imageStyle={{ borderRadius: 10 }}
         resizeMode="cover"
       >
         <View style={styles.botonesTopBar}>
           <TouchableOpacity activeOpacity={0.5} onPress={() => prueba()}>
-            <EvilIcons name="search" size={34} color="white" />
+            <EvilIcons name="plus" size={34} color="white" />
           </TouchableOpacity>
         </View>
         <View style={styles.botonesTopBar2}>
           <TouchableOpacity activeOpacity={0.5} onPress={() => prueba()}>
-            <EvilIcons name="search" size={34} color="white" />
+            <EvilIcons name="share-apple" size={34} color="white" />
           </TouchableOpacity>
         </View>
       </ImageBackground>

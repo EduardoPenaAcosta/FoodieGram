@@ -1,5 +1,5 @@
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+import { View, StyleSheet, Image, TouchableOpacity, Text } from "react-native";
+import {Ionicons } from "@expo/vector-icons";
 import { auth } from "../../firebase-config";
 import { useNavigation } from "@react-navigation/core";
 

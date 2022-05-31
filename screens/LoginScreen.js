@@ -14,8 +14,8 @@ import { auth } from "../firebase-config";
 import { HeaderTitle } from "../constants/AppStyles";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("a@a.es");
+  const [password, setPassword] = useState("12345678");
 
   const navigation = useNavigation();
 
@@ -30,15 +30,7 @@ const LoginScreen = () => {
   }, []);
 
   const handleSignUp = () => {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredentials) => {
-        const user = userCredentials.user;
-      })
-      .catch((error) => alert(error.message));
-
-    setEmail("");
-    setPassword("");
+    navigation.navigate("Register")
   };
 
   const handleSigIn = () => {
@@ -91,19 +83,19 @@ const LoginScreen = () => {
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => handleSigIn()} style={styles.button}>
-            <Text style={styles.buttonText}>Login</Text>
+            <Text style={styles.buttonText}>Iniciar sesión</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => handleSignUp()}
             style={[styles.button, styles.buttonOutline]}
           >
-            <Text style={styles.buttonText}>Register</Text>
+            <Text style={styles.buttonText}>Registrarse</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => changeScreen()}
             style={[styles.button, styles.buttonOutline]}
           >
-            <Text style={styles.buttonText}>Forgot password?</Text>
+            <Text style={styles.buttonText}>¿Contraseña olvidada?</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>

@@ -13,10 +13,12 @@ import {
   MediaTypeOptions,
 } from "expo-image-picker";
 
-import CameraRoll from "@react-native-community/cameraroll";
+import { useNavigation } from "@react-navigation/core";
 
 
 const UploadRecipieImage = () => {
+
+  const navigation = useNavigation();
 
   const [coverPage, setCoverPage] = useState(null);
   const [textRecipie, setextRecipie] = useState("");
@@ -28,19 +30,20 @@ const UploadRecipieImage = () => {
 
     if (!imageResult.cancelled) {
       setCoverPage(imageResult.uri);
-      CameraRoll.save(coverPage ,{type:"photo",album:"../../assets/saveImages"})
-                  .then((res)=>{console.log("save img...",res);})
-                  .catch((err)=>{console.log("err for save img...",err);})
-    }
-    
-    
-}
+    }  
+
+    navigation.route()
+  }
+
+  const uploadImage = () => {
+    navigation.navigate('Home', {coverPage: coverPage, textRecipie: textRecipie});
+  }
+
   return (
     <KeyboardAvoidingView style={styles.container}>
       <TouchableOpacity style={styles.opacityInput} onPress={() => pickImageGalery()}>
         <Text style={styles.textButton}> Presiona para subir las imágenes</Text>
       </TouchableOpacity>
-
       <View style={styles.containerInput}>
         <TextInput
           style={styles.textInput}
@@ -58,7 +61,9 @@ const UploadRecipieImage = () => {
           style={styles.imageArrow}
           source={require("../../assets/ArrowLeftLong.png")}
         />
-        <TouchableOpacity >
+        <TouchableOpacity
+          onPress={() => uploadImage()}
+        >
           <Image
             style={styles.imageArrow}
             source={require("../../assets/appleicon.png")}

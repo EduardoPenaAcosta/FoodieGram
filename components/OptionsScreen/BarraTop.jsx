@@ -1,5 +1,4 @@
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { EvilIcons, Ionicons } from "@expo/vector-icons";
+import { View, StyleSheet, Image, TouchableOpacity, Text } from "react-native";
 import { auth } from "../../firebase-config";
 import { useNavigation } from "@react-navigation/core";
 
@@ -70,6 +69,6 @@ const styles = StyleSheet.create({
   },
 });
 
-/ */;
+
 
 export default BarraTop;

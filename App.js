@@ -11,19 +11,9 @@ import ForgotScreen from "./screens/ForgotScreen";
 import UploadRecepie from "./screens/UploadRecepie";
 import UserScreens from "./screens/UserScreens";
 import OptionsScreen from "./screens/OptionsScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 export default function App() {
-
-  const pickImageGalery = async () => {
-    const imageResult = await launchImageLibraryAsync({
-      mediaTypes: MediaTypeOptions.Images,
-    });
-
-    if (!imageResult.cancelled) {
-      setCoverPage(imageResult.uri);
-    }
-  };
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -56,6 +46,11 @@ export default function App() {
           options={{ headerShown: false }}
           name="Options"
           component={OptionsScreen}
+        />
+        <Stack.Screen 
+          options={{ headerShown: false }}
+          name="Register"
+          component={RegisterScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
